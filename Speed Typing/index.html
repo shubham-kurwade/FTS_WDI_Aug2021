@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SpeedTyping</title>
+
+    <link rel="icon" href="media/favi.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    
+    <style>
+        html,
+        body {
+        height: 100%;
+        background-color: black;
+        color: white;
+        font-family: "Poppins" , sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="bg-dark text-center p-3 mb-5">
+        <div class="inner">
+            <h1>Speed Typing Game</h1>
+        </div>
+        </header>
+
+        <div class="container text-center">
+            <h2>Type the shown word in
+            <h1 class="text-success" id="counterOutput">60</h1>
+            seconds:
+        </h2>
+        </div>
+        <main role="main" class="container w-100 text-center inner cover">
+            <!-- <p>You Have <span class="text-warning" id="counterOutput">60</span> Seconds To Go!</p> -->
+            <h1 class="mb-5 mx-auto w-50" style="z-index: 100;" id="targetWord">Awesome</h1>
+
+            <img src="media/nerd.png" alt="Beano" id="bean" style="max-width: 15em; z-index: 0;position: absolute;left: 0;;top: 10em">
+
+            <form id="inputForm" class="form-group row">
+                <input type="text" class="col-lg-8 mx-auto form-control" id="wordInput" placeholder="Start The Game..." autocomplete="off">
+            </form>
+
+            <div class="row">
+                <p class="col-md-4">Your Highscore: <span id="highscore" class="text-success">5</span></p>
+                <p class="text-info col-md-4" id="msg">Press Enter to Start!</p>
+                <p class="col-md-4">Score: <span class="text-success" id="scoreOutput">0</span> Words</p>
+            </div>
+
+            <audio id="startAud" src="media/start.mp3"></audio>
+            <audio id="endAud" src="media/end.mp3"></audio>
+
+
+            <p class="btn btn-lg btn-secondary mt-5" data-toggle="modal" data-target="#infoModal">
+                How To Play
+            </p>
+
+          <!-- Modal -->
+            <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content text-secondary">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">How To Play</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            The game is simple just start typing and the counter will start and you have 60 seconds to type as many words as you can.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Got It!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="words.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
